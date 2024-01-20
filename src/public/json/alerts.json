@@ -3,5 +3,18 @@
         "message": "This is only a test",
         "background": "darkblue",
         "color": "white"
+    }, 
+    {
+
+        "message": "Special Offer: 20% off on selected items!",
+        "backgroundColor": "#4CAF50",
+        "textColor": "#FFFFFF"
+    },
+    {
+        "message": "Limited Stock! Grab yours before it's gone.",
+        "backgroundColor": "#FF9800",
+        "textColor": "#000000"
     }
+    
+       
 ]
