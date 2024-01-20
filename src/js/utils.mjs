@@ -13,11 +13,31 @@ export function getLocalStorage(key) {
 export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
+
+// helper to get parameter strings
+export function getParam(param) {
+  const queryString = window.location.search;
+  const UrlParams = new URLSearchParams(queryString);
+  const product = UrlParams.get(param);
+  return product;
+}
+
+// function to take a list of objects and a template and insert the objects as HTML into the DOM
+export function renderListWithTemplate(
+  templateFn, parentElement, list, position = 'afterbegin', clear = false
+) {
+  const productHTML = list.map(templateFn);
+  if (clear) {
+    parentElement.innerHTML = '';
+  }
+  parentElement.insertAdjacentHTML(position, productHTML.join(''));
+}
+
 // set a listener for both touchend and click
 export function setClick(selector, callback) {
-  qs(selector).addEventListener("touchend", (event) => {
+  qs(selector).addEventListener('touchend', (event) => {
     event.preventDefault();
     callback();
   });
-  qs(selector).addEventListener("click", callback);
+  qs(selector).addEventListener('click', callback);
 }
