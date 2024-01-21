@@ -39,7 +39,7 @@ export default class ProductDetails {
   }
 
   addToCart() {
-    setLocalStorage("so-cart" + localStorage.length, this.product);
+    setLocalStorage("so-cart" + (localStorage.length - 1), this.product);
   }
   
   renderProductDetails(selector) {
