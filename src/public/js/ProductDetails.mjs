@@ -39,7 +39,7 @@ export default class ProductDetails {
 
   addToCart() {
     setLocalStorage("so-cart" + localStorage.length, this.product);
-    }
+  }
   
   renderProductDetails(selector) {
     const element = document.querySelector(selector);
