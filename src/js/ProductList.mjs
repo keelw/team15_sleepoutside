@@ -22,11 +22,11 @@ export default class ProductList {
         this.dataSource = dataSource;
         this.listElement = listElement;
     }
+  
     async init() {
         const list = await this.dataSource.getData();
         filterProductList(list, 2, 1);
         filterProductList(list, 3, 1);
-
         this.renderList(list);
     }
 
