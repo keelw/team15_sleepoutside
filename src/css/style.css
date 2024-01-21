@@ -220,14 +220,3 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
-
-.banner {
-  display: none;
-}
-
-.banner.show {
-  display: block;
-  background-color: orange;
-  padding: 1.5rem;
-  text-align: center;
-}
