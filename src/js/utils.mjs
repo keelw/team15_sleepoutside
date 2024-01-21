@@ -36,5 +36,9 @@ export function renderListWithTemplate(templateFn, parentElement, list, position
     parentElement.innerHTML = "";
   }
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
 
+// calculate the percentage off for the sale price display
+export function calculatePercentage(fullPrice, listPrice) {
+  return Math.round(100 - (fullPrice / listPrice * 100 * 10) / 10);
 }
