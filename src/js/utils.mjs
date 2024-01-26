@@ -23,14 +23,21 @@ export function getParam(param) {
 }
 
 // function to take a list of objects and a template and insert the objects as HTML into the DOM
-export function renderListWithTemplate(
-  templateFn, parentElement, list, position = 'afterbegin', clear = false
+export function renderWithTemplate(
+  templateFn, parentElement, data, position = 'afterbegin', clear = false, callback
 ) {
-  const productHTML = list.map(templateFn);
+  // Use the template function to generate HTML from the provided data
+  const productHTML = data.map(templateFn);
+  // If the 'clear' parameter is set to true, empty the content of the parentElement
   if (clear) {
     parentElement.innerHTML = '';
   }
+  // Insert the generated HTML into the DOM at the specified position
   parentElement.insertAdjacentHTML(position, productHTML.join(''));
+  // Check if a callback function is provided and call it
+  if (callback) {
+    callback(data);
+  }
 }
 
 // set a listener for both touchend and click
