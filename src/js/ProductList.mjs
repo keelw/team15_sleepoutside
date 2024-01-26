@@ -19,7 +19,7 @@ export default class ProductList {
     }
 
     async init() {
-        const list = await this.datasource.getData();
+        const list = await this.datasource.getData(this.category);
         this.renderList(list);
     }
     
