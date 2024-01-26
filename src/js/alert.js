@@ -1,20 +1,38 @@
 class Alert {
-    constructor(message, background, color) {
-        this.message = message;
-        this.background = background;
-        this.color = color;
+    constructor() {
+      this.alertList = [];
     }
-
-    showMessage() {
-        const alertContainer = document.createElement('div');
-        alertContainer.style.backgroundColor = this.background;
-        alertContainer.style.color = this.color;
-        alertContainer.style.padding = '10px';
-        alertContainer.style.margin = '10px';
-        alertContainer.textContent = this.message;
-        
-        document.body.appendChild(alertContainer);
+  
+    async fetchAlerts() {
+      try {
+        const response = await fetch('./alerts.json');
+        const data = await response.json();
+        this.alertList = data;
+      } catch (error) {
+        console.error('Error fetching alerts:', error);
+      }
     }
-}
-
-export default Alert;
+  
+    createAlertSection() {
+      const alertSection = document.createElement('section');
+      alertSection.classList.add('alert-list');
+  
+      this.alertList.forEach((alertData) => {
+        const alertParagraph = document.createElement('p');
+        alertParagraph.textContent = alertData.message;
+        alertParagraph.style.backgroundColor = alertData.background;
+        alertParagraph.style.color = alertData.color;
+  
+        alertSection.appendChild(alertParagraph);
+      });
+  
+      document.body.appendChild(alertSection);
+    }
+  
+    async init() {
+      await this.fetchAlerts();
+      this.createAlertSection();
+    }
+  }
+  
+  export default Alert;
