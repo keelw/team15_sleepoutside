@@ -1,6 +1,10 @@
 import ProductList from "./ProductList.mjs";
 import ProductData from "./ProductData.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
+import Alert from "./alert.js";
+
+const newAlert = new Alert();
+newAlert.init();
 
 loadHeaderFooter();
 
