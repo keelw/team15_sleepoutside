@@ -3,7 +3,6 @@ import { loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter();
 
-
 function renderCartContents() {
   const itemConst = "so-cart";
   const cartItems = [];

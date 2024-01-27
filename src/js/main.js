@@ -1,6 +1,10 @@
 import ProductList from "./ProductList.mjs";
 import ProductData from "./ProductData.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
+import Alert from "./alerts.js";
+
+const newAlert = new Alert();
+newAlert.init();
 
 loadHeaderFooter();
 
@@ -20,3 +24,9 @@ function DisplayBanner() {
 }
 
 DisplayBanner();
+
+const alertsContainer = document.querySelector("alerts-container");
+
+if (alertsContainer) {
+  newAlert.createAlertSection();
+}
