@@ -25,7 +25,7 @@ function DisplayBanner() {
 
 DisplayBanner();
 
-const alertsContainer = document.querySelector(".alerts-container");
+const alertsContainer = document.querySelector("alerts-container");
 
 if (alertsContainer) {
   newAlert.createAlertSection();
