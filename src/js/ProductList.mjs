@@ -24,7 +24,7 @@ export default class ProductList {
     }
   
     async init() {
-        const list = await this.dataSource.getData();
+        const list = await this.dataSource.getData(this.category);
         filterProductList(list, 2, 1);
         filterProductList(list, 3, 1);
         this.renderList(list);
