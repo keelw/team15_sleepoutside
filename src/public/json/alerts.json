@@ -3,5 +3,11 @@
     "message": "This is only a test.",
     "background": "darkblue",
     "color": "white"
+  },
+
+  {
+    "message": "Welcome! We will give a one-time 70% discount for the customer who registers. Register Now!.",
+    "background": "green",
+    "color": "white"
   }
 ]
