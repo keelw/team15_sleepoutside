@@ -119,6 +119,52 @@ button {
   max-width: 600px;
   margin: auto;
 }
+
+.newsletter {
+  padding: 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.newsletter h2 {
+  color: #333;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.newsletter label {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.newsletter input {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 75%;
+  box-sizing: border-box;
+}
+
+.newsletter button {
+  background-color: #4285f4; /* Google Blue color */
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+  background-color: #3b78e7; /* Darker Google Blue color on hover */
+}
+
 .products {
   padding: 0.5em;
 }
