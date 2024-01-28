@@ -24,12 +24,13 @@
     qs(selector).addEventListener("click", callback);
   }
 
-  export function getParam(productId) {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const product = urlParams.get('product')
-    return product;
-  }
+// helper to get parameter strings
+export function getParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const product = urlParams.get(param);
+  return product;
+}
 
   // render a list with the provided template 
     export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {

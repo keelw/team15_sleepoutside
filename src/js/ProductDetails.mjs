@@ -1,5 +1,5 @@
 import { setLocalStorage, calculatePercentage } from "./utils.mjs";
-import { loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter, getLocalStorage } from "./utils.mjs";
 
 loadHeaderFooter();
 
@@ -9,7 +9,7 @@ function productDetailsTemplate(product) {
     <h2 class="divider">${product.NameWithoutBrand}</h2>
     <img
       class="divider"
-      src="${product.Image}"
+      src="${product.Images.PrimaryLarge}"
       alt="${product.NameWithoutBrand}"
     />
     <p class="product-card__price">$${product.FinalPrice} (${calculatePercentage(product.FinalPrice, product.SuggestedRetailPrice)}% off)</p>
@@ -43,9 +43,16 @@ export default class ProductDetails {
   }
 
   addToCart() {
-    setLocalStorage("so-cart" + (localStorage.length - 1), this.product);
+    let cartContents = getLocalStorage("so-cart");
+    //check to see if there was anything there
+    if (!cartContents) {
+      cartContents = [];
+    }
+    // then add the current product to the list
+    cartContents.push(this.product);
+    setLocalStorage("so-cart", cartContents);
   }
-  
+
   renderProductDetails(selector) {
     const element = document.querySelector(selector);
     element.insertAdjacentHTML(
