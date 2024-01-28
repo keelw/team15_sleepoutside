@@ -285,3 +285,15 @@ footer {
   padding: 1.5rem;
   text-align: center;
 }
+
+/* Product grid specific CSS on src/index.html */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.product-grid a{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
