@@ -292,7 +292,7 @@ footer {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.product-grid a{
+.product-grid a {
   text-align: center;
   text-decoration: none;
   color: black;
