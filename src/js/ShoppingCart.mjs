@@ -26,6 +26,9 @@ export default class ShoppingCart {
   }
   renderCartContents() {
     const cartItems = getLocalStorage(this.key);
+    if (cartItems === null) {
+      return
+    }
     const htmlItems = cartItems.map((item) => cartItemTemplate(item));
     document.querySelector(this.parentSelector).innerHTML = htmlItems.join("");
   }
