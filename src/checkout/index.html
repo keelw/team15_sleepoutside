@@ -17,7 +17,7 @@
             <legend>Shipping</legend>
             <div class="checkout__name">
               <label for="fname">First Name</label>
-              <input name="fname" required />
+              <input name="fname" type="text" id="fname" required>
               <label for="lname">Last Name</label>
               <input name="lname" required />
             </div>
@@ -45,9 +45,8 @@
             <legend>Order Summary</legend>
             <ul>
               <li>
-                <label for="cartTotal"
-                  >Item Subtotal(<span id="num-items"></span>)</label
-                >
+                <label for="cartTotal">
+                  Item Subtotal(<span id="num-items"></span>)</label>
                 <p name="cartTotal" id="cartTotal"></p>
               </li>
               <li>
@@ -65,10 +64,10 @@
             </ul>
           </fieldset>
 
-          <button id="checkoutSubmit" type="submit">Checkout</button>
+          <button id="checkoutSubmit">Checkout</button>
         </form>
       </section>
     </main>
-    <footer id="main-footer"></footer>
+    <footer id="footer"></footer>
   </body>
 </html>
