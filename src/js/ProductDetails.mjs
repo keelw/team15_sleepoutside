@@ -44,12 +44,30 @@ export default class ProductDetails {
 
   addToCart() {
     let cartContents = getLocalStorage("so-cart");
+    let duplicateIndex = null;
+
     //check to see if there was anything there
     if (!cartContents) {
       cartContents = [];
+
+    } else { 
+      cartContents.forEach((content, index) => {
+        const objectArray = Object.values(content);
+
+        if(objectArray.includes(this.product.Id)) {
+          duplicateIndex = index;
+        }
+      });
     }
-    // then add the current product to the list
-    cartContents.push(this.product);
+
+    if (duplicateIndex != null) {
+      cartContents[duplicateIndex]["quantity"] += 1;
+
+    } else {
+      this.product["quantity"] = 1;
+      cartContents.push(this.product);
+    }
+
     setLocalStorage("so-cart", cartContents);
   }
 
