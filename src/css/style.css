@@ -297,3 +297,12 @@ footer {
   text-decoration: none;
   color: black;
 }
+
+fieldset {
+  margin-bottom: 1rem;
+}
+
+input {
+  padding: .5rem;
+  margin: .2rem;
+}
