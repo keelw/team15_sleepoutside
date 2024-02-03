@@ -306,3 +306,21 @@ input {
   padding: .5rem;
   margin: .2rem;
 }
+
+.alert {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  background-color: orange;
+  padding: 0.3rem 1rem;
+  border: 1px solid darkorange;
+  justify-content: space-between;
+}
+
+.alert p {
+  margin : 0.3rem;
+}
+
+.alert button {
+  all: unset;
+}

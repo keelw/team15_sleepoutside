@@ -1,5 +1,5 @@
 import { setLocalStorage, calculatePercentage } from "./utils.mjs";
-import { loadHeaderFooter, getLocalStorage } from "./utils.mjs";
+import { loadHeaderFooter, getLocalStorage , alertMessage} from "./utils.mjs";
 
 loadHeaderFooter();
 
@@ -69,6 +69,8 @@ export default class ProductDetails {
     }
 
     setLocalStorage("so-cart", cartContents);
+    
+    alertMessage("Add to Cart");
   }
 
   renderProductDetails(selector) {

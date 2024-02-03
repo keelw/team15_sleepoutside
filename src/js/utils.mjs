@@ -68,3 +68,28 @@ export function getParam(param) {
   export function calculatePercentage(fullPrice, listPrice) {
     return Math.round(100 - (fullPrice / listPrice * 100 * 10) / 10);
   }
+
+  export function alertMessage(messgae, scroll=true){
+    const alert = document.createElement("div");
+    alert.classList.add("alert");
+
+    const alertMessage = document.createElement("p");
+    alertMessage.textContent = messgae;
+
+    const close = document.createElement("button");
+    close.textContent = "X";
+
+    alert.appendChild(alertMessage);
+    alert.appendChild(close);
+
+    close.addEventListener("click", function(e){
+      alert.style.display = "none";
+    })
+
+    const main = document.querySelector("main");
+    main.prepend(alert);
+    
+    if(scroll) {
+      window.scrollTo(0,0);
+    }
+  }
