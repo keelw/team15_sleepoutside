@@ -1,4 +1,4 @@
-import { renderListWithTemplate } from "./utils.mjs";
+import { renderListWithTemplate, calculatePercentage } from "./utils.mjs";
 
 function productCardTemplate(item) {
     return `<li class="product-card">
@@ -6,8 +6,9 @@ function productCardTemplate(item) {
             <img src="${item.Images.PrimaryMedium}" alt="Image of ${item.Name}">
             <h3 class="card_brand">${item.Brand.Name}</h3>
             <h2 class="card_name">${item.Name}</h2>
-            <p class="product-card_price">$${item.FinalPrice}</p>
-        </a>
+            <p class="product-card__price">$${item.FinalPrice} (${calculatePercentage(item.FinalPrice, item.SuggestedRetailPrice)}% off)</p>
+            <p class="product-card__full__price">$${item.SuggestedRetailPrice}.00</p>
+                </a>
       </li>`
 }
 
