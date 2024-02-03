@@ -19,7 +19,7 @@
               <label for="fname">First Name</label>
               <input name="fname" type="text" id="fname" required>
               <label for="lname">Last Name</label>
-              <input name="lname" required />
+              <input name="lname" type="text" maxlength="20" required />
             </div>
             <div class="checkout__address">
               <label for="street">Street</label>
@@ -28,18 +28,18 @@
               <input name="city" required />
               <label for="state">State</label>
               <input name="state" required />
-              <label for="zip">Zip</label>
+              <label for="zip" type="number">Zip</label>
               <input name="zip" id="zip" required />
             </div>
           </fieldset>
           <fieldset>
             <legend>Payment</legend>
             <label for="cardNumber">Card number</label>
-            <input name="cardNumber" required />
+            <input name="cardNumber" type="number" max="999999999" required />
             <label for="expiration">Expiration</label>
-            <input name="expiration" required />
+            <input name="expiration" type="date" required />
             <label for="code">Security Code</label>
-            <input name="code" required />
+            <input name="code" type="number" required />
           </fieldset>
           <fieldset class="checkout-summary">
             <legend>Order Summary</legend>
