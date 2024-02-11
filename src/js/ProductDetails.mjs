@@ -1,4 +1,3 @@
-import { doc } from "prettier";
 import { setLocalStorage, calculatePercentage } from "./utils.mjs";
 import { loadHeaderFooter, getLocalStorage } from "./utils.mjs";
 
@@ -70,7 +69,6 @@ export default class ProductDetails {
     }
 
     setLocalStorage("so-cart", cartContents);
-    this.addToCartAnimate();
   }
 
   renderProductDetails(selector) {
@@ -79,14 +77,5 @@ export default class ProductDetails {
       "afterbegin",
       productDetailsTemplate(this.product)
     );
-  }
-
-  addToCartAnimate(){
-    const cartIcon = document.querySelector(".cart a svg");
-    cartIcon.classList.add("animate");
-
-    setTimeout(() => {
-      cartIcon.classList.remove("animate");
-    }, 1000);
   }
 }

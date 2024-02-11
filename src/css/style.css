@@ -306,16 +306,3 @@ input {
   padding: .5rem;
   margin: .2rem;
 }
-
-.cart a svg.animate{
-  animation: addToCart 2s;
-}
-
-@keyframes addToCart {
-  10%{
-    transform: rotate(30deg);
-  }
-  50%{
-    transform: rotate(-30deg);
-  }
-}
