@@ -51,21 +51,25 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener('click', callback);
 }
 
-export function alertMessage(message, scroll = true);
-// create element to hold our alert
-const alert = document.createElement('div'); 
-// add a class to style the alert
-alert.classList.add('alert');
-// set the contents. You should have a message and an X or something the user can click on to remove
-alert.innerHTML = `<span class='close'>&times;</span>
-<span>${message}</span>`;
-// add a listener to the alert to see if they clicked on the X
-// if they did then remove the child
-alert.addEventListener('click', function (e) {
-  if (e.target.tagName === 'SPAN' && e.target.classList.contains('close')) {
-    main.removeChild(this);
-  }
-});
+export function alertMessage(message, scroll = true) {
+  // create element to hold our alert
+  const alert = document.createElement('div');
+  // add a class to style the alert
+  alert.classList.add('alert');
+  // set the contents. You should have a message and an X or something the user can click on to remove
+  alert.innerHTML = `<span class='close'>&times;</span>
+  <span>${message}</span>`;
+  // add a listener to the alert to see if they clicked on the X
+  // if they did then remove the child
+  alert.addEventListener('click', function (e) {
+    if (e.target.tagName === 'SPAN' && e.target.classList.contains('close')) {
+      alert.parentElement.removeChild(alert);
+    }
+  });
+  // append the alert to the main element or the element specified by the user
+  const main = document.querySelector('main');
+  main.appendChild(alert);
+}
 
 // add the alert to the top of main
 const main = document.querySelector('main');
